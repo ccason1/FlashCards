@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.event.*;
 
 public class MainMenu extends JFrame
 {
@@ -12,10 +13,17 @@ public class MainMenu extends JFrame
 		JButton creatorButton = new JButton("Create or edit deck");
 		panel.add(creatorButton);
 		
-		JButton userButton = new JButton("User flash cards");
+		JButton userButton = new JButton("Use flash cards");
 		panel.add(userButton);
+		
+		add(panel);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
+		
+		creatorButton.addActionListener(e ->
+		{
+			new CreatorEditorMenu();
+		});
 	}
 }
